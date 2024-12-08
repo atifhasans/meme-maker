@@ -1,23 +1,21 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
-const Creatememe = () => {
+const Creatememe = ({ searchParams }) => {
   const [img, setImg] = useState("");
   const text1 = useRef();
   const text2 = useRef();
-  const searchParams = useSearchParams();
 
-  // Extracting URL and ID from searchParams
-  const url = searchParams.get("url");
-  const id = searchParams.get("id");
+  // Extracting URL and ID from searchParams prop
+  const url = searchParams.url;
+  const id = searchParams.id;
 
   const createMeme = async (event) => {
     event.preventDefault();
 
     const data = await fetch(
-      `https://api.imgflip.com/caption_image?template_id=${id}&username=mabdullah6600&password=asdfgfdsa123&text0=${text1.current?.value}&text1=${text2.current?.value}`,
+      `https://api.imgflip.com/caption_image?template_id=${id}&username=atifhs&password=9cnAth*j2QR3*WP&text0=${text1.current?.value}&text1=${text2.current?.value}`,
       {
         method: "POST",
       }
