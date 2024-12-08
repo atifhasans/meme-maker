@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React from 'react';
 
 const Page = async () => {
-  // Fetch meme data
   const data = await fetch('https://api.imgflip.com/get_memes');
   const response = await data.json();
 
